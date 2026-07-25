@@ -30,6 +30,7 @@ const columns = [
     links: [
       { label: "Contact", href: "#request-a-pilot" },
       { label: "Request a pilot", href: "#request-a-pilot" },
+      { label: "Brand book", href: "/brand-book.html", external: true },
       { label: "Privacy", href: "#privacy" },
     ],
   },
@@ -64,9 +65,30 @@ export default function Footer() {
                     <li key={l.label}>
                       <a
                         href={l.href}
-                        className="text-sm text-ice/65 transition-colors hover:text-cyan"
+                        {...("external" in l && l.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="inline-flex items-center gap-1 text-sm text-ice/65 transition-colors hover:text-cyan"
                       >
                         {l.label}
+                        {"external" in l && l.external && (
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            aria-hidden
+                            className="opacity-70"
+                          >
+                            <path
+                              d="M7 17L17 7M9 7h8v8"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        )}
                       </a>
                     </li>
                   ))}
@@ -95,6 +117,14 @@ export default function Footer() {
               © {2026} ColdProof. All rights reserved.
             </p>
             <div className="flex items-center gap-5 text-xs text-ice/40">
+              <a
+                href="/brand-book.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan"
+              >
+                Brand book
+              </a>
               <a href="#privacy" className="hover:text-cyan">
                 Privacy
               </a>

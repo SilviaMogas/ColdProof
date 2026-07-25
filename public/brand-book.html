@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColdProof — Brand Book v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1B2E;
+  --ink10:#12253C;
+  --ink20:#1C3350;
+  --cold:#0FB5D6;
+  --breach:#F08C1E;
+  --frost:#EDF2F6;
+  --slate:#5B6E80;
+  --line:#D6E0E8;
+  --paper:#FBFCFD;
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --data:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.028em;margin:0}
+p{margin:0 0 14px}p:last-child{margin-bottom:0}
+.mono{font-family:var(--data);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.lead{font-size:18px;color:var(--slate);max-width:64ch}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--cold);outline-offset:3px}
+
+.band svg{display:block;width:100%;height:56px}
+
+/* cover */
+.cover{padding:80px 0 52px}
+.cover-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:68px}
+.lockup{display:flex;align-items:center;gap:15px}
+.lockup .word{font-family:var(--display);font-size:36px;line-height:1;letter-spacing:-.03em}
+.lockup .word span{font-weight:400}.lockup .word b{font-weight:700}
+.cover h1{font-weight:700;font-size:clamp(46px,7.6vw,92px);line-height:.95;letter-spacing:-.042em;max-width:12ch}
+.cover .sub{font-size:19px;color:var(--slate);margin:22px 0 0;max-width:48ch}
+.tagline{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.6vw,28px);letter-spacing:-.022em;line-height:1.25;margin:42px 0 0;max-width:24ch}
+.tagline em{font-style:normal;color:var(--cold)}
+.cover-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+@media (max-width:820px){.cover-grid{grid-template-columns:1fr}}
+
+/* pages */
+.pg{padding:74px 0 14px;border-top:1px solid var(--line)}
+.pg-num{font-family:var(--data);font-size:12px;font-weight:700;color:var(--cold);letter-spacing:.1em;display:block;margin-bottom:10px}
+.pg h2{font-weight:700;font-size:clamp(28px,3.9vw,44px);margin-bottom:14px}
+.pg-intro{margin-bottom:34px}
+
+.spec{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:0;padding:20px 24px;margin:30px 0 40px}
+.spec dl{display:grid;grid-template-columns:150px 1fr;gap:11px 22px;margin:0}
+.spec dt{font-family:var(--data);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);padding-top:3px}
+.spec dd{margin:0;font-size:14.5px}
+@media (max-width:640px){.spec dl{grid-template-columns:1fr;gap:2px 0}.spec dd{margin-bottom:12px}}
+
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(226px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(172px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:2px;padding:22px}
+.card h3{font-size:17px;font-weight:500;margin-bottom:8px}
+.card h4{font-size:14.5px;font-weight:500;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--slate)}
+.card .mono{display:block;margin-bottom:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th,.tbl td{text-align:left;padding:13px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:var(--data);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);font-weight:500;width:26%;padding-right:20px}
+h3.sub{font-size:20px;font-weight:500;margin:44px 0 16px}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--cold);border-radius:0;padding:16px 20px;font-size:14px;color:var(--slate);margin:24px 0}
+.note b{color:var(--ink)}
+.frame{display:flex;align-items:center;justify-content:center;height:78px;background:var(--frost);border-radius:2px}
+
+/* colour */
+.sw{border:1px solid var(--line);border-radius:2px;overflow:hidden;background:#fff}
+.sw .chip{height:116px}
+.sw .meta{padding:14px 16px 18px}
+.sw .meta h4{font-size:15px;font-weight:500;margin-bottom:3px}
+.sw .meta code{font-family:var(--data);font-size:12px;color:var(--slate);display:block}
+.sw .meta p{font-size:13px;color:var(--slate);margin:8px 0 0;line-height:1.5}
+.ratio{display:flex;height:46px;border-radius:2px;overflow:hidden;border:1px solid var(--line)}
+.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--data);font-size:10.5px;letter-spacing:.08em}
+
+/* components */
+.comp{background:var(--frost);border-radius:2px;padding:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;min-height:100px}
+.pill{font-family:var(--data);font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--cold);display:inline-flex;align-items:center;gap:7px}
+.badge{font-family:var(--data);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:2px;display:inline-flex;align-items:center;gap:7px}
+.badge.ok{background:#DFF4FA;color:#075E70}
+.badge.br{background:#FCEEDA;color:#7A4405}
+.badge.hold{background:var(--ink);color:#fff}
+.badge.rel{background:var(--cold);color:var(--ink)}
+
+/* route */
+.route{background:#fff;border:1px solid var(--line);border-radius:2px;padding:26px 24px;margin-bottom:20px}
+.route-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.route-head h4{font-size:17px;font-weight:500}
+.stops{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;align-items:start}
+.stop{text-align:center}
+.stop .cp{width:38px;height:38px;border-radius:50%;margin:0 auto 9px;display:flex;align-items:center;justify-content:center}
+.stop .cp.ok{background:var(--cold)}
+.stop .cp.br{background:var(--breach)}
+.stop .cp.node{background:var(--ink)}
+.stop .t{font-family:var(--data);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);line-height:1.4}
+.stop .v{font-family:var(--data);font-size:12px;font-weight:500;margin-top:5px}
+@media (max-width:760px){.stops{grid-template-columns:repeat(3,1fr);gap:14px 6px}}
+
+/* mockups */
+.mock{background:#fff;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.mock .bar{background:var(--ink);color:#fff;padding:11px 16px;display:flex;align-items:center;gap:10px;font-family:var(--data);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.mock .body{padding:18px}
+.mrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.mrow:last-child{border-bottom:0}
+.mrow .k{font-family:var(--data);font-size:12px;color:var(--slate)}
+.label-mock{background:#fff;border:1px solid var(--ink);border-radius:2px;padding:16px;font-family:var(--data);font-size:12px}
+.label-mock .big{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.02em}
+.slide-mock{background:var(--frost);border-radius:3px;padding:34px;min-height:216px;display:flex;flex-direction:column;justify-content:center}
+.slide-mock h3{font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:-.032em;line-height:1.08}
+.cap{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0;padding:14px 18px;font-size:14px;color:var(--slate)}
+
+/* voice */
+.voice{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border:1px solid var(--line);background:#fff}
+.voice>div{padding:24px}
+.voice>div+div{border-left:1px solid var(--line)}
+.voice ul{margin:12px 0 0;padding-left:18px}
+.voice li{font-size:14.5px;margin-bottom:9px;color:var(--slate)}
+.voice li b{color:var(--ink);font-weight:600}
+@media (max-width:640px){.voice>div+div{border-left:0;border-top:1px solid var(--line)}}
+
+ol.plain{margin:0;padding-left:20px}
+ol.plain li{font-size:15px;margin-bottom:10px}
+
+/* toc */
+.otoc{border-top:1px solid var(--line)}
+.otoc a{display:grid;grid-template-columns:56px 1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:baseline}
+.otoc a:hover{background:#fff}
+.otoc .n{font-family:var(--data);font-size:12px;color:var(--cold);font-weight:700}
+.otoc .t{font-family:var(--display);font-size:17px;font-weight:500}
+.otoc .d{font-size:13.5px;color:var(--slate);text-align:right;max-width:42ch}
+@media (max-width:700px){.otoc a{grid-template-columns:44px 1fr}.otoc .d{display:none}}
+
+/* prompt blocks */
+.prompt{background:var(--ink);color:#DCE7F0;border-radius:2px;padding:18px 20px;font-family:var(--data);font-size:12.5px;line-height:1.65;white-space:pre-wrap;margin:0 0 8px}
+.prompt b{color:var(--cold);font-weight:500}
+.pblock{margin-bottom:28px}
+.pblock h4{font-size:16px;font-weight:500;margin-bottom:10px}
+.pblock .use{font-size:13.5px;color:var(--slate);margin-top:8px}
+
+footer{padding:56px 0 84px;color:var(--slate);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:64px}
+
+@media (prefers-reduced-motion:no-preference){
+  .trace{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2.6s cubic-bezier(.65,0,.35,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 96 96">
+    <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+      <path transform="rotate(60 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+      <path transform="rotate(120 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+      <path transform="rotate(180 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+      <path transform="rotate(240 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+      <path transform="rotate(300 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75"/>
+    </g>
+    <path d="M39.7 47.8 L44.8 53.8 L56.3 42.3" fill="none" stroke="var(--cold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-min" viewBox="0 0 96 96">
+    <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+      <path d="M48 28 V6"/><path transform="rotate(60 48 48)" d="M48 28 V6"/><path transform="rotate(120 48 48)" d="M48 28 V6"/>
+      <path transform="rotate(180 48 48)" d="M48 28 V6"/><path transform="rotate(240 48 48)" d="M48 28 V6"/><path transform="rotate(300 48 48)" d="M48 28 V6"/>
+    </g>
+    <circle cx="48" cy="48" r="12" fill="var(--cold)"/>
+  </symbol>
+  <symbol id="box" viewBox="0 0 260 210">
+    <polygon points="130,14 244,72 130,130 16,72" fill="#1C3350"/>
+    <polygon points="16,72 130,130 130,192 16,134" fill="#12253C"/>
+    <polygon points="244,72 130,130 130,192 244,134" fill="#0A1B2E"/>
+    <g fill="none" stroke="#0A1B2E" stroke-width="2" stroke-linejoin="round">
+      <polygon points="130,14 244,72 130,130 16,72"/><polygon points="16,72 130,130 130,192 16,134"/><polygon points="244,72 130,130 130,192 244,134"/>
+    </g>
+    <g transform="translate(38,104) scale(0.42)" stroke="#0FB5D6" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/><path transform="rotate(60 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/>
+      <path transform="rotate(120 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/><path transform="rotate(180 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/>
+      <path transform="rotate(240 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/><path transform="rotate(300 48 48)" d="M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15"/>
+    </g>
+    <rect x="152" y="120" width="76" height="30" fill="#061422" stroke="#0A1B2E" stroke-width="2"/>
+    <text x="190" y="141" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" font-weight="700" fill="#0FB5D6">2–8°C</text>
+    <rect x="152" y="158" width="35" height="9" fill="#0FB5D6"/>
+    <rect x="193" y="158" width="35" height="9" fill="#1C3350"/>
+    <line x1="16" y1="90" x2="130" y2="148" stroke="#1C3350" stroke-width="1.5"/>
+    <line x1="244" y1="90" x2="130" y2="148" stroke="#1C3350" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="tick" viewBox="0 0 24 24"><path d="M6 12.5 L10 16.5 L18 8" fill="none" stroke="#0A1B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="cross" viewBox="0 0 24 24"><path d="M7.5 7.5 L16.5 16.5 M16.5 7.5 L7.5 16.5" fill="none" stroke="#0A1B2E" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="qr" viewBox="0 0 42 42"><rect width="42" height="42" fill="#fff"/><g fill="#0A1B2E"><rect x="2" y="2" width="12" height="12"/><rect x="28" y="2" width="12" height="12"/><rect x="2" y="28" width="12" height="12"/></g><g fill="#fff"><rect x="5" y="5" width="6" height="6"/><rect x="31" y="5" width="6" height="6"/><rect x="5" y="31" width="6" height="6"/></g><g fill="#0A1B2E"><rect x="18" y="4" width="3" height="3"/><rect x="22" y="9" width="3" height="3"/><rect x="17" y="14" width="3" height="3"/><rect x="24" y="17" width="3" height="3"/><rect x="18" y="21" width="3" height="3"/><rect x="30" y="21" width="3" height="3"/><rect x="35" y="25" width="3" height="3"/><rect x="22" y="27" width="3" height="3"/><rect x="28" y="31" width="3" height="3"/><rect x="33" y="35" width="3" height="3"/><rect x="18" y="35" width="3" height="3"/><rect x="9" y="18" width="3" height="3"/><rect x="4" y="22" width="3" height="3"/></g></symbol>
+</svg>
+
+<div class="wrap">
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="cover-top">
+    <div class="lockup">
+      <svg width="50" height="50" viewBox="0 0 96 96" style="color:var(--ink)" aria-label="ColdProof"><use href="#mark"/></svg>
+      <div class="word"><span>Cold</span><b>Proof</b></div>
+    </div>
+    <div class="mono">Brand book · v1.0 · July 2026</div>
+  </div>
+  <div class="cover-grid">
+    <div>
+      <h1>ColdProof Brand Book</h1>
+      <p class="sub">Verifiable cold chain infrastructure for vaccines, insulin, biologics and temperature-sensitive medicines.</p>
+      <p class="tagline">Proof of delivery is not proof of <em>safe</em> delivery.</p>
+    </div>
+    <div style="text-align:center"><svg width="100%" style="max-width:340px" viewBox="0 0 260 210" aria-label="ColdProof shipment box"><use href="#box"/></svg></div>
+  </div>
+</header>
+
+<div class="band">
+  <svg viewBox="0 0 1000 56" preserveAspectRatio="none" role="img" aria-label="Temperature trace held inside the required band">
+    <line x1="0" y1="8" x2="1000" y2="8" stroke="#D6E0E8" stroke-width="1"/>
+    <line x1="0" y1="48" x2="1000" y2="48" stroke="#D6E0E8" stroke-width="1"/>
+    <path class="trace" d="M0 34 L120 27 L210 32 L320 20 L430 27 L540 18 L660 29 L780 22 L890 27 L1000 19" fill="none" stroke="#0FB5D6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+
+<!-- ============ STRUCTURE ============ -->
+<section class="pg" id="structure">
+  <span class="pg-num">STRUCTURE</span>
+  <h2>Ten pages</h2>
+  <p class="lead pg-intro">Pages 01–03 fix what the brand is. Pages 04–07 make it reproducible. Pages 08–10 put it on a stage. Each page carries its copy, its layout and its design instructions.</p>
+  <nav class="otoc">
+    <a href="#p1"><span class="n">01</span><span class="t">Brand overview</span><span class="d">Logo, positioning, primary line, descriptor, promise</span></a>
+    <a href="#p2"><span class="n">02</span><span class="t">The idea</span><span class="d">Signature proves arrival. ColdProof proves condition.</span></a>
+    <a href="#p3"><span class="n">03</span><span class="t">Brand foundations</span><span class="d">Mission, vision, values</span></a>
+    <a href="#p4"><span class="n">04</span><span class="t">Logo system</span><span class="d">Construction, clear space, minimum size, misuse</span></a>
+    <a href="#p5"><span class="n">05</span><span class="t">Colour system</span><span class="d">Palette, meaning, ratios, examples</span></a>
+    <a href="#p6"><span class="n">06</span><span class="t">Typography system</span><span class="d">Display, body, data</span></a>
+    <a href="#p7"><span class="n">07</span><span class="t">Product visual language</span><span class="d">Box, checkpoints, escrow states</span></a>
+    <a href="#p8"><span class="n">08</span><span class="t">Customer journey</span><span class="d">Lab, transit, pharmacy, settlement</span></a>
+    <a href="#p9"><span class="n">09</span><span class="t">Application examples</span><span class="d">Dashboard, label, scan, review, slide</span></a>
+    <a href="#p10"><span class="n">10</span><span class="t">Presentation principles</span><span class="d">How the brand behaves on a stage</span></a>
+    <a href="#p11"><span class="n">A</span><span class="t">Generation prompts</span><span class="d">Ready to paste for images and slides</span></a>
+  </nav>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="pg" id="p1">
+  <span class="pg-num">PAGE 01</span>
+  <h2>Brand overview</h2>
+  <p class="lead pg-intro">ColdProof is not a medical app. It is a trust infrastructure layer for temperature-sensitive supply chains.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Two columns. Left: mark at 140 px, then positioning statement, primary line, descriptor. Right: the shipment box, centred, on frost. Product promise sits full width beneath both, separated by a hairline.</dd>
+    <dt>Design instructions</dt><dd>Primary line is the largest type on the page, larger than the page title. Only one word is cyan. The mark never appears more than once. No supporting imagery beyond the box.</dd>
+  </dl></div>
+
+  <div class="grid g2" style="align-items:center">
+    <div>
+      <svg width="132" height="132" viewBox="0 0 96 96" style="color:var(--ink)" aria-label="ColdProof mark"><use href="#mark"/></svg>
+      <p style="font-family:var(--display);font-size:clamp(24px,3.2vw,34px);font-weight:700;letter-spacing:-.032em;line-height:1.12;margin:26px 0 0;max-width:20ch">Proof of delivery is not proof of <span style="color:var(--cold)">safe</span> delivery.</p>
+    </div>
+    <div style="text-align:center"><svg width="100%" style="max-width:300px" viewBox="0 0 260 210" aria-label="ColdProof shipment box"><use href="#box"/></svg></div>
+  </div>
+
+  <table class="tbl" style="margin-top:36px">
+    <tr><th>Category</th><td>Verifiable cold chain infrastructure for vaccines, insulin, biologics and temperature-sensitive medicines.</td></tr>
+    <tr><th>Positioning</th><td style="font-size:17px">ColdProof verifies not only that medicine arrived, but that it arrived safely.</td></tr>
+    <tr><th>Primary line</th><td style="font-family:var(--display);font-size:20px;font-weight:500">Proof of delivery is not proof of safe delivery.</td></tr>
+    <tr><th>Secondary line</th><td style="font-family:var(--display);font-size:20px;font-weight:500">Verified cold, end to end.</td></tr>
+    <tr><th>Descriptor</th><td>Verifiable cold chain for vaccines, insulin and medicines — traceability, compliance and programmable settlement in one record.</td></tr>
+    <tr><th>Product promise</th><td>Every temperature-sensitive delivery carries its own evidence. Conditions are recorded as they happen, at every handover, in one record. Payment follows that record.</td></tr>
+    <tr><th>Core principle</th><td style="font-family:var(--display);font-size:20px;font-weight:500">Money follows evidence.</td></tr>
+  </table>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="pg" id="p2">
+  <span class="pg-num">PAGE 02</span>
+  <h2>The idea</h2>
+  <p class="lead pg-intro">One gap holds the whole brand together.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Two-line statement set very large, centred, with generous space above and below. Beneath it, a two-column comparison: traditional logistics on the left in slate, ColdProof on the right in ink with a cyan rule. Closing principle sits alone at the foot.</dd>
+    <dt>Design instructions</dt><dd>The comparison columns must be identical in width and item count so the difference reads as content, not emphasis. Left column stays entirely neutral — no red, no crossing out. We are not attacking logistics; we are naming what it was never designed to do.</dd>
+  </dl></div>
+
+  <div style="text-align:center;padding:26px 0 44px">
+    <p style="font-family:var(--display);font-size:clamp(28px,4.6vw,54px);font-weight:700;letter-spacing:-.04em;line-height:1.06;margin:0">A signature proves arrival.</p>
+    <p style="font-family:var(--display);font-size:clamp(28px,4.6vw,54px);font-weight:700;letter-spacing:-.04em;line-height:1.06;margin:6px 0 0;color:var(--slate)">It does not prove condition.</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <span class="mono">Traditional logistics proves</span>
+      <table class="tbl" style="margin-top:6px">
+        <tr><td>Handover</td></tr><tr><td>Delivery</td></tr><tr><td>Custody transfer</td></tr>
+        <tr><td style="color:var(--slate)">Nothing about the state of the goods</td></tr>
+      </table>
+    </div>
+    <div class="card" style="border-left:3px solid var(--cold);border-radius:0">
+      <span class="mono">ColdProof proves</span>
+      <table class="tbl" style="margin-top:6px">
+        <tr><td>Temperature</td></tr><tr><td>Conditions</td></tr><tr><td>Custody</td></tr><tr><td>Compliance</td></tr>
+        <tr><td><b>And connects that evidence to payment</b></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:48px 0 12px">
+    <p class="mono" style="margin-bottom:10px">Core principle</p>
+    <p style="font-family:var(--display);font-size:clamp(26px,3.8vw,42px);font-weight:700;letter-spacing:-.036em;margin:0">Money follows evidence.</p>
+    <p style="font-size:16px;color:var(--slate);margin:14px auto 0;max-width:46ch">Escrow releases only when safe delivery conditions are verified.</p>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="pg" id="p3">
+  <span class="pg-num">PAGE 03</span>
+  <h2>Brand foundations</h2>
+  <p class="lead pg-intro">What the company is for, in four statements and four values.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Mission and vision as full-width statements in display type, stacked, divided by a hairline. Values below as a four-column row.</dd>
+    <dt>Design instructions</dt><dd>No imagery on this page at all. If it needs a picture to hold attention, the statements are not written well enough. Values get one sentence each — never a paragraph.</dd>
+  </dl></div>
+
+  <table class="tbl">
+    <tr><th>Mission</th><td style="font-family:var(--display);font-size:21px;font-weight:500;letter-spacing:-.02em">Verify every temperature-sensitive delivery from origin to destination.</td></tr>
+    <tr><th>Vision</th><td style="font-family:var(--display);font-size:21px;font-weight:500;letter-spacing:-.02em">A world where medicine movement is transparent, accountable and condition verified.</td></tr>
+  </table>
+
+  <h3 class="sub">Values</h3>
+  <div class="grid g4">
+    <div class="card"><span class="mono">01</span><h4>Evidence</h4><p>We show the reading before we draw the conclusion. Nothing is asserted that was not measured.</p></div>
+    <div class="card"><span class="mono">02</span><h4>Precision</h4><p>A range, a timestamp and a checkpoint ID. Vague language is a failure of the product, not of the copy.</p></div>
+    <div class="card"><span class="mono">03</span><h4>Accountability</h4><p>A breach belongs to a leg of the chain, not to the shipment as a whole. Naming it is the point.</p></div>
+    <div class="card"><span class="mono">04</span><h4>Trust</h4><p>Earned by a record no single party can edit, not claimed by a word on a website.</p></div>
+  </div>
+
+  <h3 class="sub">Voice</h3>
+  <p class="lead" style="margin-bottom:22px">ColdProof speaks like infrastructure. Not pharma advertising, not crypto marketing, not startup hype.</p>
+  <div class="voice">
+    <div>
+      <div class="mono">Do</div>
+      <ul>
+        <li><b>State measurements.</b> "Held between 2 and 8 °C across 14 checkpoints."</li>
+        <li><b>State consequences.</b> "Payment released on verified delivery."</li>
+        <li><b>Use operational language.</b> Excursion, checkpoint, custody, threshold, batch.</li>
+        <li><b>Explain evidence.</b> "Breach at CP-07. Batch held."</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mono">Avoid</div>
+      <ul>
+        <li><b>Hype.</b> Revolutionising healthcare. Unlocking the future. Disrupting logistics. Next-generation solution.</li>
+        <li><b>Fear marketing.</b> Never lead with harm to patients to make a commercial point.</li>
+        <li><b>Overclaiming.</b> Not "we guarantee medicine safety" — <b>"we verify conditions."</b></li>
+        <li><b>Blockchain-first framing.</b> The ledger is how it works, not what it sells.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="pg" id="p4">
+  <span class="pg-num">PAGE 04</span>
+  <h2>Logo system</h2>
+  <p class="lead pg-intro">A six-arm crystal verification symbol. The inner void holds the check. Nothing is stacked, contained or added.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Primary mark on white and on ink, side by side at equal size. Below: three lockup variants in a row, then the construction table, then the size ladder, then the misuse row.</dd>
+    <dt>Design instructions</dt><dd>Every rule gets a rendered example beside it. All logo panels share identical dimensions so the variants read as one system rather than a menu of options.</dd>
+  </dl></div>
+
+  <div class="grid g2">
+    <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:238px"><svg width="150" height="150" viewBox="0 0 96 96" style="color:var(--ink)" aria-label="Mark on white"><use href="#mark"/></svg></div>
+    <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:238px;background:var(--ink)"><svg width="150" height="150" viewBox="0 0 96 96" style="color:#fff" aria-label="Mark on ink"><use href="#mark"/></svg></div>
+  </div>
+
+  <div class="grid g3" style="margin-top:20px">
+    <div class="card"><span class="mono">Icon only</span><div class="frame"><svg width="60" height="60" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg></div><p style="margin-top:10px">App icon, favicon, box print, checkpoint stamp.</p></div>
+    <div class="card"><span class="mono">Wordmark only</span><div class="frame"><div style="font-family:var(--display);font-size:30px;letter-spacing:-.03em"><span style="font-weight:400">Cold</span><b>Proof</b></div></div><p style="margin-top:10px">Footers and partner walls, where the icon already appears.</p></div>
+    <div class="card"><span class="mono">Horizontal lockup</span><div class="frame"><div style="display:flex;align-items:center;gap:12px"><svg width="40" height="40" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg><div style="font-family:var(--display);font-size:26px;letter-spacing:-.03em"><span style="font-weight:400">Cold</span><b>Proof</b></div></div></div><p style="margin-top:10px">The default. Navigation, slide corners, packaging.</p></div>
+  </div>
+
+  <table class="tbl" style="margin-top:32px">
+    <tr><th>Construction</th><td>On a 96-unit grid, centre at 48,48. One arm runs from radius <b>20 to 42</b>, carrying two pairs of barbs at 30% and 68% of its length, each at 60° to the arm. That arm is rotated six times by 60°. Perfect radial symmetry — <b>no arm is ever shortened or removed</b>.</td></tr>
+    <tr><th>The inner void</th><td>Radius 20, so the arms' round caps stop at 17.25 from centre. The check sits entirely inside that void, reaching 12.6 at its furthest point including stroke. That leaves a <b>clear gap of 4.6 units on every side</b>.</td></tr>
+    <tr><th>Separation rule</th><td>The cyan check must never touch, overlap or visually crowd a white or ink arm. If the gap drops below 4 units at any point, the check is too large or off centre. This is the single most common way to break the mark.</td></tr>
+    <tr><th>Check geometry</th><td>Vertex at 44.8, 53.8. Short arm to 39.7, 47.8. Long arm to 56.3, 42.3. The long arm is roughly 1.9× the short one — below 1.6 it stops reading as a check and starts reading as a chevron.</td></tr>
+    <tr><th>Stroke</th><td>Arms and barbs 5.5 units. Check 5 units. Round caps and joins throughout.</td></tr>
+    <tr><th>Lockup spacing</th><td>Gap between icon and wordmark equals one arm length at icon scale. Wordmark cap height equals 0.62 of icon height.</td></tr>
+    <tr><th>Clear space</th><td>One arm length (36 units) on all four sides. Nothing enters it — no type, no rules, no image edges.</td></tr>
+    <tr><th>Minimum size</th><td>Full mark from 32 px. Below that, the simplified mark: barbs removed, arms at 8 units, check reduced to a solid safe cold core of radius 12 — which keeps the same 4-unit gap to the arms.</td></tr>
+    <tr><th>Colour</th><td>Ink, white or safe cold only. The mark never carries breach amber, and never changes colour to report a state.</td></tr>
+  </table>
+
+  <h3 class="sub">Size behaviour</h3>
+  <div class="grid g4">
+    <div class="card"><span class="mono">64 px +</span><div class="frame"><svg width="64" height="64" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg></div><p style="margin-top:10px">Full mark, barbs visible.</p></div>
+    <div class="card"><span class="mono">32 px</span><div class="frame"><svg width="32" height="32" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg></div><p style="margin-top:10px">Lower limit for the full mark.</p></div>
+    <div class="card"><span class="mono">24 px</span><div class="frame"><svg width="24" height="24" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark-min"/></svg></div><p style="margin-top:10px">Simplified mark. Favicon.</p></div>
+    <div class="card"><span class="mono">16 px</span><div class="frame"><svg width="16" height="16" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark-min"/></svg></div><p style="margin-top:10px">Simplified mark. Absolute floor.</p></div>
+  </div>
+
+  <h3 class="sub">Incorrect usage</h3>
+  <div class="grid g4">
+    <div class="card"><span class="mono" style="color:var(--breach)">Never</span><div class="frame"><svg width="54" height="54" viewBox="0 0 96 96" style="color:var(--ink)" transform="scale(1.5,1)"><use href="#mark"/></svg></div><p style="margin-top:10px">Distort, stretch or squash.</p></div>
+    <div class="card"><span class="mono" style="color:var(--breach)">Never</span><div class="frame"><svg width="54" height="54" viewBox="0 0 96 96" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0FB5D6"/><stop offset="1" stop-color="#0A1B2E"/></linearGradient></defs><g style="color:url(#g1)"><use href="#mark"/></g></svg></div><p style="margin-top:10px">Apply gradients or effects.</p></div>
+    <div class="card"><span class="mono" style="color:var(--breach)">Never</span><div class="frame"><svg width="54" height="54" viewBox="0 0 96 96" aria-hidden="true"><path d="M14 22 L48 10 L82 22 V52 C82 72 48 88 48 88 C48 88 14 72 14 52 Z" fill="#0A1B2E"/><g style="color:#fff" transform="translate(24,24) scale(0.5)"><use href="#mark"/></g></svg></div><p style="margin-top:10px">Place inside a shield, badge or container.</p></div>
+    <div class="card"><span class="mono" style="color:var(--breach)">Never</span><div class="frame" style="background:var(--cold)"><svg width="54" height="54" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg></div><p style="margin-top:10px">Put the mark on cyan. The core disappears.</p></div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="pg" id="p5">
+  <span class="pg-num">PAGE 05</span>
+  <h2>Colour system</h2>
+  <p class="lead pg-intro">Four colours and three supports. Each one reports something. None of them decorate.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Four large swatches across the top with meaning beneath each. Support neutrals as a smaller row. Ratio bar full width below, then usage rules as a table, then two worked examples.</dd>
+    <dt>Design instructions</dt><dd>Swatch height 116 px minimum so the colour reads as a surface rather than a chip. Hex values in mono, always. The ratio bar is literal — its segment widths match the stated percentages.</dd>
+  </dl></div>
+
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#0A1B2E"></div><div class="meta"><h4>Ink</h4><code>#0A1B2E</code><p>Structure, typography, brand foundation. The default for almost everything.</p></div></div>
+    <div class="sw"><div class="chip" style="background:#0FB5D6"></div><div class="meta"><h4>Safe cold</h4><code>#0FB5D6</code><p>Verified state, in-range temperature, successful settlement. The only verification colour.</p></div></div>
+    <div class="sw"><div class="chip" style="background:#F08C1E"></div><div class="meta"><h4>Breach</h4><code>#F08C1E</code><p>Temperature excursion, hold state, payment withheld. Use rarely.</p></div></div>
+    <div class="sw"><div class="chip" style="background:#EDF2F6;border-bottom:1px solid var(--line)"></div><div class="meta"><h4>Frost</h4><code>#EDF2F6</code><p>Backgrounds, surfaces, inactive states.</p></div></div>
+  </div>
+
+  <h3 class="sub">Support</h3>
+  <div class="grid g3">
+    <div class="sw"><div class="chip" style="height:72px;background:#5B6E80"></div><div class="meta"><h4>Slate</h4><code>#5B6E80</code><p>Secondary text, eyebrows, captions.</p></div></div>
+    <div class="sw"><div class="chip" style="height:72px;background:#D6E0E8"></div><div class="meta"><h4>Lines</h4><code>#D6E0E8</code><p>Hairlines, table rules, dividers.</p></div></div>
+    <div class="sw"><div class="chip" style="height:72px;background:#FBFCFD;border-bottom:1px solid var(--line)"></div><div class="meta"><h4>Paper</h4><code>#FBFCFD</code><p>Page ground.</p></div></div>
+  </div>
+
+  <h3 class="sub">Ratio</h3>
+  <div class="ratio">
+    <div style="flex:0 0 70%;background:var(--ink);color:#fff">70% INK + FROST</div>
+    <div style="flex:0 0 20%;background:#fff;color:var(--slate);border-left:1px solid var(--line)">20% WHITE</div>
+    <div style="flex:0 0 8%;background:var(--cold);color:var(--ink)">8%</div>
+    <div style="flex:0 0 2%;background:var(--breach)"></div>
+  </div>
+  <p class="mono" style="margin-top:10px">70% ink and frost · 20% white · 8% safe cold · 2% breach</p>
+
+  <table class="tbl" style="margin-top:30px">
+    <tr><th>Green is retired</th><td>Green never appears anywhere in the system — not as success, not as a chart series, not as an icon accent. Safe cold is the only verification colour. This is what keeps ColdProof from looking like a generic dashboard.</td></tr>
+    <tr><th>Breach discipline</th><td>Breach amber is earned. It appears when a condition has failed and nowhere else. An amber heading, an amber button or an amber divider is a misuse.</td></tr>
+    <tr><th>Ink tints</th><td>For the shipment box and other dimensional artwork, ink may step to <code>#12253C</code> and <code>#1C3350</code>. These are tonal steps of ink, not new colours, and they never carry meaning.</td></tr>
+    <tr><th>Contrast</th><td>Never set safe cold type on white below 18 px. Never set ink type on safe cold as a large field. Tinted backgrounds take their own dark values: <code>#075E70</code> on cyan tint, <code>#7A4405</code> on amber tint.</td></tr>
+    <tr><th>Never colour alone</th><td>A verified checkpoint carries a tick glyph, a breach carries a cross. State must survive a bad projector and colour-blind viewers.</td></tr>
+  </table>
+
+  <h3 class="sub">Worked examples</h3>
+  <div class="grid g2">
+    <div class="card"><span class="mono">Correct</span><div class="comp" style="background:var(--ink);justify-content:flex-start"><span class="badge rel">Payment released</span><span class="pill" style="background:transparent;color:#fff">4.6 °C</span></div><p style="margin-top:12px">Ink field, one cyan element, mono numeral. Reads as infrastructure.</p></div>
+    <div class="card"><span class="mono">Incorrect</span><div class="comp" style="background:#E9F7EE;justify-content:flex-start"><span class="badge" style="background:#1FA85B;color:#fff">Success</span><span class="badge" style="background:#E24B4A;color:#fff">Error</span></div><p style="margin-top:12px">Green and red on a tinted ground. Generic dashboard, no brand left.</p></div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="pg" id="p6">
+  <span class="pg-num">PAGE 06</span>
+  <h2>Typography system</h2>
+  <p class="lead pg-intro">Three roles. The monospace face is a core brand signal, not a technical convenience.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Three specimen rows, each with the role and settings on the left in a fixed 150 px column and a live sample on the right. Rules table beneath.</dd>
+    <dt>Design instructions</dt><dd>Set each specimen at the size it will actually be used, not at a display size. The data specimen must contain a real reading, a real checkpoint ID and a real timestamp.</dd>
+  </dl></div>
+
+  <table class="tbl">
+    <tr><th>Display<br><span style="font-family:var(--body);font-size:13px;color:var(--slate);text-transform:none;letter-spacing:0">Space Grotesk 700<br>Tracking −3%</span></th>
+      <td><div style="font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,46px);letter-spacing:-.03em;line-height:1">Verified cold, end to end.</div>
+      <p style="margin-top:10px;color:var(--slate)">Headlines, key statements, hero messaging, the wordmark. Sentence case. Never all caps. Maximum three lines.</p></td></tr>
+    <tr><th>Body<br><span style="font-family:var(--body);font-size:13px;color:var(--slate);text-transform:none;letter-spacing:0">Inter 400 / 600<br>Line height 1.6</span></th>
+      <td><div style="font-size:17px;max-width:56ch">Each checkpoint records temperature, opening events and custody change to a single record. When every checkpoint clears, settlement executes.</div>
+      <p style="margin-top:10px;color:var(--slate)">Explanations, descriptions, documentation, interface labels.</p></td></tr>
+    <tr><th>Data<br><span style="font-family:var(--body);font-size:13px;color:var(--slate);text-transform:none;letter-spacing:0">JetBrains Mono 500</span></th>
+      <td><div style="font-family:var(--data);font-size:clamp(16px,2.2vw,22px);font-weight:500;line-height:1.6">2.0–8.0 °C<br>CP-04<br>04:12:38<br><span style="color:var(--cold)">IN RANGE</span></div>
+      <p style="margin-top:10px;color:var(--slate)">Mandatory for temperature, timestamps, checkpoint IDs, shipment IDs and measurements. No exceptions.</p></td></tr>
+  </table>
+
+  <table class="tbl" style="margin-top:30px">
+    <tr><th>Why it matters</th><td>The mono face is what makes a slide read as a record rather than a pitch. If a number appears in the body face, the page loses the single strongest signal the brand has after the mark.</td></tr>
+    <tr><th>Eyebrows and labels</th><td>Mono, 11 px, uppercase, 0.14em tracking, slate. This is the only place uppercase is permitted.</td></tr>
+    <tr><th>Hierarchy</th><td>Display 700 for headlines. Inter 600 for subheads and emphasis. Inter 400 for body. Mono 500 for all data. Four levels, no more.</td></tr>
+    <tr><th>Fallbacks</th><td>Display → Inter Tight → system sans. Body → system sans. Data → ui-monospace. All three families are free on Google Fonts.</td></tr>
+  </table>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="pg" id="p7">
+  <span class="pg-num">PAGE 07</span>
+  <h2>Product visual language</h2>
+  <p class="lead pg-intro">Four elements carry the entire product story. Learn these and every screen, label and slide composes itself.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Box on the left at 330 px, four definitions on the right as a table. Component tray below on frost.</dd>
+    <dt>Design instructions</dt><dd>The box is flat axonometric, three faces, built from ink tints with safe cold detailing. Never a photorealistic render and never a photograph of a cooler. Components sit on frost, never on white, so they read as a kit.</dd>
+  </dl></div>
+
+  <div class="grid g2" style="align-items:center">
+    <div style="text-align:center"><svg width="100%" style="max-width:330px" viewBox="0 0 260 210" aria-label="ColdProof shipment box"><use href="#box"/></svg></div>
+    <div><table class="tbl">
+      <tr><th>Shipment box</th><td>One box, one consignment, one required range. Ink tints for the three faces, safe cold for the crystal, the readout and the status strip.</td></tr>
+      <tr><th>Safe cold checkpoint</th><td>The reading at that point stayed inside the required range. Circle, safe cold fill, ink tick.</td></tr>
+      <tr><th>Breach checkpoint</th><td>An excursion, an unauthorised opening, or a broken custody handover. Circle, breach fill, ink cross.</td></tr>
+      <tr><th>Escrow status</th><td>Payment state, tied directly to the checkpoint record. Held while in transit. Released or refunded on arrival.</td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="sub">Components</h3>
+  <div class="grid g3">
+    <div class="card"><span class="mono">Temperature pill</span><div class="comp"><span class="pill">2.0–8.0 °C</span><span class="pill">4.6 °C now</span></div><p style="margin-top:12px">Mono numerals, safe cold hairline. Range or live reading — never both in one pill.</p></div>
+    <div class="card"><span class="mono">Verified badge</span><div class="comp"><span class="badge ok">Verified</span></div><p style="margin-top:12px">All checkpoints in range. Cyan tint ground, dark cyan type.</p></div>
+    <div class="card"><span class="mono">Breach badge</span><div class="comp"><span class="badge br">Breach · CP-03</span></div><p style="margin-top:12px">Always names the failing checkpoint. A breach without an ID is not a breach report.</p></div>
+    <div class="card"><span class="mono">Escrow held</span><div class="comp"><span class="badge hold">Escrow held</span></div><p style="margin-top:12px">Ink fill. Default from order to delivery. Neutral — holding funds is not a failure.</p></div>
+    <div class="card"><span class="mono">Payment released</span><div class="comp"><span class="badge rel">Payment released</span></div><p style="margin-top:12px">Solid safe cold with ink type. Only after every checkpoint has cleared.</p></div>
+    <div class="card"><span class="mono">Scan card</span><div class="comp"><svg width="70" height="70" viewBox="0 0 42 42" aria-label="Scan code"><use href="#qr"/></svg></div><p style="margin-top:12px">Scanned at each checkpoint. Ink on white only — never cyan, never inverted.</p></div>
+  </div>
+</section>
+
+<div class="band">
+  <svg viewBox="0 0 1000 56" preserveAspectRatio="none" role="img" aria-label="Temperature trace breaking the upper limit and recovering">
+    <line x1="0" y1="8" x2="1000" y2="8" stroke="#D6E0E8" stroke-width="1"/>
+    <line x1="0" y1="48" x2="1000" y2="48" stroke="#D6E0E8" stroke-width="1"/>
+    <path d="M0 33 L160 26 L300 31 L430 23 L520 29" fill="none" stroke="#0FB5D6" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    <path d="M520 29 L610 10 L700 3 L790 12 L860 27" fill="none" stroke="#F08C1E" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    <path d="M860 27 L1000 22" fill="none" stroke="#0FB5D6" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+
+<!-- ============ 08 ============ -->
+<section class="pg" id="p8">
+  <span class="pg-num">PAGE 08</span>
+  <h2>Customer journey</h2>
+  <p class="lead pg-intro">Lab → transit checkpoints → pharmacy → settlement. Two routes, two outcomes, one rule.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Two horizontal route strips stacked. Each strip: origin node, four checkpoint nodes, destination node, then the settlement result on its own line. Compliant route first, breach route second.</dd>
+    <dt>Design instructions</dt><dd>Both strips must be structurally identical so the only difference the eye catches is the amber node. Nodes at 38 px so they read from six metres. Every node carries a glyph — colour is never the only signal. Do not animate the strips in a live deck; a static comparison is faster to grasp.</dd>
+  </dl></div>
+
+  <div class="route">
+    <div class="route-head">
+      <h4>Compliant route</h4>
+      <span class="badge ok">Verified · 4 of 4 in range</span>
+    </div>
+    <div class="stops">
+      <div class="stop"><div class="cp node"><svg width="18" height="18" viewBox="0 0 96 96" style="color:#fff"><use href="#mark-min"/></svg></div><div class="t">Lab<br>origin</div><div class="v">SHP-0001</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-01<br>pickup</div><div class="v">4.1 °C</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-02<br>transit hub</div><div class="v">5.0 °C</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-03<br>final transit</div><div class="v">4.4 °C</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-04<br>delivery</div><div class="v">3.9 °C</div></div>
+      <div class="stop"><div class="cp node"><svg width="18" height="18" viewBox="0 0 24 24" style="color:#fff"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="t">Pharmacy<br>accepted</div><div class="v">2.0–8.0 °C</div></div>
+    </div>
+    <div style="border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <span style="font-size:14.5px;color:var(--slate)">Every checkpoint inside the required range. Settlement executes on the record.</span>
+      <span class="badge rel">Payment released to lab</span>
+    </div>
+  </div>
+
+  <div class="route">
+    <div class="route-head">
+      <h4>Breach route</h4>
+      <span class="badge br">Breach · CP-02</span>
+    </div>
+    <div class="stops">
+      <div class="stop"><div class="cp node"><svg width="18" height="18" viewBox="0 0 96 96" style="color:#fff"><use href="#mark-min"/></svg></div><div class="t">Lab<br>origin</div><div class="v">SHP-0004</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-01<br>pickup</div><div class="v">4.3 °C</div></div>
+      <div class="stop"><div class="cp br"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="breach"><use href="#cross"/></svg></div><div class="t">CP-02<br>transit hub</div><div class="v" style="color:#7A4405">12.6 °C</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-03<br>final transit</div><div class="v">5.2 °C</div></div>
+      <div class="stop"><div class="cp ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-label="in range"><use href="#tick"/></svg></div><div class="t">CP-04<br>delivery</div><div class="v">4.7 °C</div></div>
+      <div class="stop"><div class="cp node"><svg width="18" height="18" viewBox="0 0 24 24" style="color:#fff"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="t">Pharmacy<br>held</div><div class="v">2.0–8.0 °C</div></div>
+    </div>
+    <div style="border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <span style="font-size:14.5px;color:var(--slate)">Recovery after CP-02 does not clear the breach. The excursion already happened, and it is attributed.</span>
+      <span class="badge br">Escrow refunded to pharmacy</span>
+    </div>
+  </div>
+
+  <div class="note"><b>The point of the page.</b> Nobody decided these outcomes. The record did.</div>
+  <div class="note"><b>Readings are illustrative.</b> Required ranges vary by product. Take them from the manufacturer's own specification before using them in a live setting or a public claim.</div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section class="pg" id="p9">
+  <span class="pg-num">PAGE 09</span>
+  <h2>Application examples</h2>
+  <p class="lead pg-intro">The same grammar across five surfaces. If a surface needs new rules, the rules are wrong.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Two-column grid of mockups. Each mockup carries a one-line caption naming the single rule it demonstrates.</dd>
+    <dt>Design instructions</dt><dd>Mockups are schematic, not pixel-perfect — enough fidelity to judge hierarchy, not so much that they look shipped. Every mockup shows at least one mono numeral and at most one state colour.</dd>
+  </dl></div>
+
+  <div class="grid g2">
+    <div>
+      <div class="mock">
+        <div class="bar"><svg width="16" height="16" viewBox="0 0 96 96" style="color:#fff"><use href="#mark-min"/></svg> Operations dashboard</div>
+        <div class="body">
+          <div class="mrow"><span class="k">SHP-0001 · Vaccine A</span><span class="badge ok">Verified</span></div>
+          <div class="mrow"><span class="k">SHP-0002 · Vaccine B</span><span class="badge ok">Verified</span></div>
+          <div class="mrow"><span class="k">SHP-0003 · Insulin</span><span class="badge hold">In transit</span></div>
+          <div class="mrow"><span class="k">SHP-0004 · Biologic</span><span class="badge br">Breach · CP-02</span></div>
+        </div>
+      </div>
+      <p class="cap">State colour appears only in the state column. Everything else stays ink and frost.</p>
+    </div>
+
+    <div>
+      <div class="label-mock">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div><div class="big">SHP-0004</div><div style="color:var(--slate);margin-top:4px">BIOLOGIC · BATCH 24B-118</div></div>
+          <svg width="38" height="38" viewBox="0 0 96 96" style="color:var(--ink)"><use href="#mark"/></svg>
+        </div>
+        <div style="border-top:1px solid var(--ink);margin:14px 0 12px"></div>
+        <div style="display:flex;justify-content:space-between"><span>REQUIRED RANGE</span><b>2.0–8.0 °C</b></div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px"><span>CHECKPOINTS</span><b>4</b></div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px"><span>ORIGIN</span><b>LAB-BCN-02</b></div>
+        <div style="margin-top:14px;display:flex;justify-content:center"><svg width="64" height="64" viewBox="0 0 42 42"><use href="#qr"/></svg></div>
+      </div>
+      <p class="cap">Shipment label and scan card. Single ink, mono throughout, printable on thermal stock. No state colour — the label is written before the outcome exists.</p>
+    </div>
+
+    <div>
+      <div class="mock">
+        <div class="bar">Pharmacy review</div>
+        <div class="body">
+          <h4 style="font-size:18px;font-weight:500;margin-bottom:4px">SHP-0004 · Biologic</h4>
+          <p style="font-size:14px;color:var(--slate);margin-bottom:16px">One checkpoint outside the required range.</p>
+          <div style="display:flex;gap:10px;margin-bottom:18px">
+            <span style="width:34px;height:34px;border-radius:50%;background:var(--cold);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24"><use href="#tick"/></svg></span>
+            <span style="width:34px;height:34px;border-radius:50%;background:var(--breach);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24"><use href="#cross"/></svg></span>
+            <span style="width:34px;height:34px;border-radius:50%;background:var(--cold);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24"><use href="#tick"/></svg></span>
+            <span style="width:34px;height:34px;border-radius:50%;background:var(--cold);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24"><use href="#tick"/></svg></span>
+          </div>
+          <div class="mrow"><span class="k">CP-02 · transit hub · 03:41</span><b style="color:#7A4405">12.6 °C</b></div>
+          <div class="mrow"><span class="k">Duration above threshold</span><b>00:47:12</b></div>
+          <div style="margin-top:16px"><span class="badge br">Escrow refunded</span></div>
+        </div>
+      </div>
+      <p class="cap">The failure is specific: which checkpoint, what time, what reading, how long. Vague rejection is what the product exists to end.</p>
+    </div>
+
+    <div>
+      <div class="slide-mock">
+        <div class="mono">The gap</div>
+        <h3 style="margin-top:14px">Proof of delivery is not proof of <span style="color:var(--cold)">safe</span> delivery.</h3>
+        <p style="font-family:var(--data);font-size:13px;color:var(--slate);margin-top:22px">COLDPROOF · ETHGLOBAL</p>
+      </div>
+      <p class="cap">Conference slide. One idea, one accent word, mono footer, lockup bottom-left. Nothing else on the surface.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="pg" id="p10">
+  <span class="pg-num">PAGE 10</span>
+  <h2>Presentation principles</h2>
+  <p class="lead pg-intro">Six rules that carry the brand onto a stage, where slides are read from six metres in about eight seconds each.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Six principle cards in a two-column grid, then a slide sequence table.</dd>
+    <dt>Design instructions</dt><dd>Each principle gets a verb-first title and one sentence. Anything longer belongs in this book, not on a stage.</dd>
+  </dl></div>
+
+  <div class="grid g2">
+    <div class="card"><span class="mono">01</span><h3>One idea per slide</h3><p>A display headline and at most one supporting line. If a slide needs a paragraph, it is two slides.</p></div>
+    <div class="card"><span class="mono">02</span><h3>Numbers in mono</h3><p>Every temperature, timestamp and checkpoint ID in JetBrains Mono. This is what makes the deck read as measured rather than pitched.</p></div>
+    <div class="card"><span class="mono">03</span><h3>No 3D renders</h3><p>Flat axonometric artwork or a real photograph. Rendered props read as filler to a technical jury.</p></div>
+    <div class="card"><span class="mono">04</span><h3>Use the temperature band</h3><p>The 2–8 trace is the transition between acts. It turns amber the moment the failure case is introduced.</p></div>
+    <div class="card"><span class="mono">05</span><h3>Show the failure clearly</h3><p>A system that can say no is more convincing than one that only says yes. Let the amber land without narration.</p></div>
+    <div class="card"><span class="mono">06</span><h3>Open with the claim</h3><p>Slide one is the primary line on frost with the mark. No agenda slide, no team slide before the problem.</p></div>
+  </div>
+
+  <h3 class="sub">Slide sequence</h3>
+  <table class="tbl">
+    <tr><th>01 Title</th><td>Proof of delivery is not proof of safe delivery.</td></tr>
+    <tr><th>02 The gap</th><td>A signature proves arrival. It does not prove condition.</td></tr>
+    <tr><th>03 Consequence</th><td>Nobody can prove where it went wrong, so the loss is settled by leverage.</td></tr>
+    <tr><th>04 Product</th><td>A box that records temperature, openings and custody.</td></tr>
+    <tr><th>05 Checkpoints</th><td>Lab, transit hub, final transit, pharmacy. Four readings, one record.</td></tr>
+    <tr><th>06 Compliant route</th><td>Four in range. Payment released.</td></tr>
+    <tr><th>07 Breach route</th><td>Breach at CP-02, 12.6 °C, 47 minutes above threshold. Escrow refunded.</td></tr>
+    <tr><th>08 The rule</th><td>Money follows evidence.</td></tr>
+    <tr><th>09 Demo</th><td>Holding slide. The demo is the content.</td></tr>
+    <tr><th>10 Close</th><td>Return to the primary line. Mark, line, URL. End there.</td></tr>
+  </table>
+
+  <table class="tbl" style="margin-top:30px">
+    <tr><th>What to cut</th><td>The agenda slide, the market-size slide with an unsourced figure, the architecture diagram, and any slide built from three identical rounded cards.</td></tr>
+    <tr><th>Sourcing</th><td>Any statistic on a slide carries a named primary source and a year. An unsourced number is the fastest way to lose a technical jury.</td></tr>
+    <tr><th>Timing</th><td>Slides 01–03 in forty seconds. Slides 04–08 in two minutes. Demo two minutes. Close in twenty seconds.</td></tr>
+  </table>
+</section>
+
+<!-- ============ APPENDIX ============ -->
+<section class="pg" id="p11">
+  <span class="pg-num">APPENDIX A</span>
+  <h2>Generation prompts</h2>
+  <p class="lead pg-intro">Paste-ready prompts for image and slide generation. Each one carries the palette, the constraints and the prohibitions, so an off-brand result is a prompt failure rather than a taste dispute.</p>
+
+  <div class="spec"><dl>
+    <dt>Layout</dt><dd>Prompt blocks on ink, monospaced, each with a title above and a usage note below.</dd>
+    <dt>Design instructions</dt><dd>Never remove the prohibition list from a prompt. It is doing most of the work — image models default to gradients, glows and 3D unless told otherwise.</dd>
+  </dl></div>
+
+  <div class="pblock">
+    <h4>A1 · Shipment box, hero asset</h4>
+    <div class="prompt">Flat vector illustration of an insulated medical shipment box in axonometric projection, three visible faces.
+Palette strictly: #0A1B2E, #12253C, #1C3350 for the three faces, #0FB5D6 for accents only.
+Details: a six-arm snowflake outline on the left face in #0FB5D6; a small rectangular digital readout on the right face showing "2-8°C" in a monospace face in #0FB5D6; a two-segment status strip beneath the readout.
+Style: clean geometric vector, flat fills, 2px dark outline, no texture.
+Background: transparent or #FBFCFD.
+Do not include: gradients, drop shadows, glow, reflections, 3D rendering, photorealism, ice crystals, snow, human hands, medical crosses, green, red, brand logos, any text other than the readout.</div>
+    <p class="use">Use for: cover, page 07, deck slide 04. Regenerate at 2000 px minimum for print.</p>
+  </div>
+
+  <div class="pblock">
+    <h4>A2 · Checkpoint route diagram</h4>
+    <div class="prompt">Flat vector diagram of a horizontal supply chain route, left to right, on a #FBFCFD background.
+Six nodes as filled circles connected by a thin #D6E0E8 line: origin, four checkpoints, destination.
+Origin and destination filled #0A1B2E. Checkpoints filled #0FB5D6 with a #0A1B2E tick glyph inside, except the second checkpoint, filled #F08C1E with a #0A1B2E cross glyph.
+Under each node, two lines of small uppercase monospace label in #5B6E80.
+Style: schematic, precise, generous whitespace, hairline connectors.
+Do not include: gradients, shadows, glow, 3D, isometric perspective, icons of trucks or planes, green, red, decorative flourishes.</div>
+    <p class="use">Use for: page 08, deck slides 05 to 07. Generate the compliant and breach versions separately and keep them structurally identical.</p>
+  </div>
+
+  <div class="pblock">
+    <h4>A3 · Temperature band, section device</h4>
+    <div class="prompt">Flat vector line chart, very wide and short, aspect ratio roughly 16:1.
+Two horizontal hairlines in #D6E0E8 marking upper and lower thresholds.
+A single polyline temperature trace between them in #0FB5D6, 2.5px, rounded joins, gently irregular.
+Optional breach variant: the trace crosses above the upper threshold at around 55% of the width, turns #F08C1E for that segment only, then returns to #0FB5D6 on recovery.
+Background transparent.
+Do not include: axis labels, gridlines, data points, fill under the curve, gradients, shadows, glow, any text.</div>
+    <p class="use">Use for: section dividers throughout the book, and as the transition between acts in the deck.</p>
+  </div>
+
+  <div class="pblock">
+    <h4>A4 · Title slide</h4>
+    <div class="prompt">Presentation slide, 16:9, background #EDF2F6.
+Headline in Space Grotesk Bold, tracking -3%, colour #0A1B2E, sentence case, left aligned, occupying the left two thirds: "Proof of delivery is not proof of safe delivery." The single word "safe" in #0FB5D6.
+Small uppercase monospace eyebrow above the headline in #5B6E80.
+A six-arm snowflake mark with a small check in its centre, #0A1B2E, bottom-left at 24px, next to the wordmark ColdProof.
+Generous margins, no other elements.
+Do not include: gradients, photographs, stock imagery, icons, decorative shapes, green, red, centred logos.</div>
+    <p class="use">Use for: deck slides 01 and 10. The same template with the eyebrow changed carries slides 02, 03 and 08.</p>
+  </div>
+
+  <div class="pblock">
+    <h4>A5 · Dashboard mockup</h4>
+    <div class="prompt">Flat UI mockup of an operations dashboard, light theme on #FBFCFD, single card with a 1px #D6E0E8 border.
+Dark header bar in #0A1B2E with small white uppercase monospace title.
+Four table rows, each with a monospace shipment ID and product name on the left in #5B6E80, and a status chip on the right.
+Chips: three in a pale cyan tint with dark cyan text reading "Verified", one in a pale amber tint with dark amber text reading "Breach · CP-02".
+Style: clean enterprise SaaS, hairline rules, generous row padding, no icons.
+Do not include: gradients, shadows, rounded card corners above 4px, sidebars, avatars, charts, green, red, dark mode.</div>
+    <p class="use">Use for: page 09 and deck slide 09. Keep it schematic — a mockup that looks shipped invites questions about a product that is not.</p>
+  </div>
+
+  <div class="pblock">
+    <h4>A6 · Iconography set</h4>
+    <div class="prompt">Set of six monoline vector icons on a 24 unit grid, 2px stroke, round caps, no fills, colour #0A1B2E, transparent background, arranged in a single row with equal spacing.
+Icons: a six-arm snowflake; a shield; a check mark; a thermometer; a wallet; a shipping box in flat front view.
+Style: consistent stroke weight across all six, geometric construction, optically balanced, no containers or circles behind the icons.
+Do not include: fills, gradients, shadows, perspective, colour, drop caps, labels.</div>
+    <p class="use">Use for: the icon library. The shield belongs to this set only and never appears behind or around the logo.</p>
+  </div>
+
+  <div class="note"><b>One rule for every prompt.</b> If the output contains green, a gradient, a glow or a 3D render, it is off brand regardless of how good it looks. Regenerate rather than adjust.</div>
+</section>
+
+<div style="text-align:center;padding:64px 0 12px">
+  <svg width="82" height="82" viewBox="0 0 96 96" style="color:var(--ink)" aria-label="ColdProof"><use href="#mark"/></svg>
+  <p style="font-family:var(--display);font-size:clamp(24px,3.6vw,38px);font-weight:700;letter-spacing:-.035em;line-height:1.15;max-width:20ch;margin:28px auto 0">Proof of delivery is not proof of <span style="color:var(--cold)">safe</span> delivery.</p>
+</div>
+
+<footer>
+  <div class="mono">ColdProof · Brand book v1.0</div>
+  <div class="mono">coldproof.com</div>
+</footer>
+
+</div>
+</body>
+</html>
