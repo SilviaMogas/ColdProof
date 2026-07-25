@@ -68,7 +68,7 @@ export default function HowItWorks() {
                   <svg width="26" height="10" viewBox="0 0 26 10" aria-hidden>
                     <path
                       d="M0 5h22m0 0l-4-4m4 4l-4 4"
-                      stroke="#00B8D9"
+                      stroke="#0FB5D6"
                       strokeWidth="1.5"
                       fill="none"
                       strokeLinecap="round"

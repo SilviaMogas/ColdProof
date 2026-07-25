@@ -8,13 +8,13 @@ export default function Hero() {
     >
       {/* Subtle background grid + glow, no crypto imagery */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_0%,rgba(0,184,217,0.16),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_10%_20%,rgba(127,224,195,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_0%,rgba(15,181,214,0.16),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_10%_20%,rgba(237,242,246,0.06),transparent_55%)]" />
         <div
           className="absolute inset-0 opacity-[0.5]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(223,246,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(223,246,255,0.04) 1px, transparent 1px)",
+              "linear-gradient(rgba(237,242,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,242,246,0.04) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
             maskImage:
               "radial-gradient(80% 60% at 50% 0%, black, transparent 75%)",
