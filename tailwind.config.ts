@@ -8,27 +8,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ColdProof brand palette
+        // ColdProof brand palette — Brand Book v1.0
+        // Ink is the structural default; safe cold (cyan) is the ONLY
+        // verification colour; breach amber is earned. Green is retired.
         navy: {
-          DEFAULT: "#071A2B",
-          900: "#071A2B",
-          800: "#0B2438",
-          700: "#0F2E45",
-          600: "#143A56",
+          DEFAULT: "#0A1B2E", // Ink
+          900: "#0A1B2E", // Ink
+          800: "#12253C", // Ink tint (dimensional artwork only)
+          700: "#1C3350", // Ink tint (dimensional artwork only)
+          600: "#1C3350",
         },
-        ice: "#DFF6FF",
+        ink: "#0A1B2E",
+        // Ink tints — never carry meaning, used only for dimensional artwork
+        "ink-10": "#12253C",
+        "ink-20": "#1C3350",
+        ice: "#EDF2F6", // Frost — light surfaces / light text on ink
+        frost: "#EDF2F6",
         cyan: {
-          DEFAULT: "#00B8D9",
-          soft: "#33C7E1",
+          DEFAULT: "#0FB5D6", // Safe cold — the only verification colour
+          soft: "#3FC9E0",
         },
-        mint: "#7FE0C3",
-        alert: "#FF6B35",
-        softwhite: "#F7FAFC",
-        ink: "#102332",
+        // "mint" is retired green, now an alias of safe cold so any legacy
+        // verified/success usage renders in the single verification colour.
+        mint: "#0FB5D6",
+        // "alert" maps to Breach amber — earned, appears only on failure.
+        alert: "#F08C1E",
+        breach: "#F08C1E",
+        slate: "#5B6E80", // Secondary text, eyebrows, captions
+        line: "#D6E0E8", // Hairlines, table rules, dividers
+        softwhite: "#FBFCFD", // Paper — page ground
+        paper: "#FBFCFD",
       },
       fontFamily: {
-        sora: ["var(--font-sora)", "system-ui", "sans-serif"],
+        // Display → Space Grotesk. The `sora` key is kept as an alias so
+        // existing `font-sora` classes resolve to the brand display face.
+        sora: ["var(--font-sora)", "Inter Tight", "system-ui", "sans-serif"],
+        display: ["var(--font-sora)", "Inter Tight", "system-ui", "sans-serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // Data face — mandatory for temperatures, timestamps, IDs, readings.
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       boxShadow: {
         card: "0 1px 2px rgba(7,26,43,0.04), 0 8px 24px rgba(7,26,43,0.06)",

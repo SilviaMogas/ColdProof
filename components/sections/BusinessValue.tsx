@@ -82,7 +82,7 @@ export default function BusinessValue() {
               delay={i * 80}
               className="group flex gap-5 rounded-2xl border border-navy-900/8 bg-softwhite p-6 shadow-card transition-shadow duration-300 hover:shadow-cardHover"
             >
-              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-cyan/10 text-[#0784a0] transition-transform duration-300 group-hover:scale-105">
+              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-cyan/10 text-[#075E70] transition-transform duration-300 group-hover:scale-105">
                 <svg width="24" height="24" viewBox="0 0 24 24">
                   {b.icon}
                 </svg>

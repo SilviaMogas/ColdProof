@@ -171,7 +171,7 @@ function ShipmentCard({
         <div className="flex items-center gap-2.5">
           <span
             className={`flex h-8 w-8 items-center justify-center rounded-lg font-sora text-[11px] font-bold ${
-              isAlert ? "bg-alert/15 text-[#c2410c]" : "bg-mint/20 text-[#0c7a5f]"
+              isAlert ? "bg-alert/15 text-[#7A4405]" : "bg-mint/20 text-[#075E70]"
             }`}
           >
             {id.split("-")[1]}
@@ -192,8 +192,8 @@ function ShipmentCard({
             Temperature history
           </span>
           <span
-            className={`font-sora text-2xl font-bold tabular-nums ${
-              isAlert ? "text-alert" : "text-[#0c7a5f]"
+            className={`font-mono text-2xl font-bold tabular-nums ${
+              isAlert ? "text-alert" : "text-[#075E70]"
             }`}
           >
             {currentTemp.toFixed(1)}°C
@@ -206,7 +206,7 @@ function ShipmentCard({
           axisMin={0}
           axisMax={12}
           height={140}
-          lineColor={isAlert ? "#FF6B35" : "#7FE0C3"}
+          lineColor={isAlert ? "#F08C1E" : "#0FB5D6"}
           showHead={playing || isAlert}
           ariaLabel={`Temperature history for shipment ${id}`}
         />

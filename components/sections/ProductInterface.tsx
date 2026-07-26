@@ -111,7 +111,7 @@ export default function ProductInterface() {
                   axisMin={0}
                   axisMax={12}
                   height={170}
-                  lineColor="#FF6B35"
+                  lineColor="#F08C1E"
                   ariaLabel="Temperature history for batch CP-2048"
                 />
               </Panel>
@@ -146,7 +146,7 @@ export default function ProductInterface() {
                       key={s.label}
                       className="rounded-xl bg-white/[0.03] p-3"
                     >
-                      <p className="font-sora text-xl font-bold text-white">
+                      <p className="font-mono text-xl font-bold text-white">
                         {s.value}
                       </p>
                       <p className="mt-0.5 text-[11px] leading-tight text-ice/45">
@@ -160,7 +160,7 @@ export default function ProductInterface() {
                     <span className="text-[11px] uppercase tracking-wide text-ice/50">
                       Reliability score
                     </span>
-                    <span className="font-sora text-lg font-bold text-mint">
+                    <span className="font-mono text-lg font-bold text-cyan">
                       A · 94
                     </span>
                   </div>

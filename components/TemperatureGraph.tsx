@@ -31,7 +31,7 @@ export default function TemperatureGraph({
   axisMax = 14,
   height = 180,
   className = "",
-  lineColor = "#00B8D9",
+  lineColor = "#0FB5D6",
   showHead = true,
   compact = false,
   ariaLabel,
@@ -88,7 +88,7 @@ export default function TemperatureGraph({
         y={bandTop}
         width={innerW}
         height={Math.max(0, bandBottom - bandTop)}
-        fill="#7FE0C3"
+        fill="#0FB5D6"
         fillOpacity="0.14"
       />
       <line
@@ -96,7 +96,7 @@ export default function TemperatureGraph({
         x2={width - padR}
         y1={bandTop}
         y2={bandTop}
-        stroke="#7FE0C3"
+        stroke="#0FB5D6"
         strokeOpacity="0.55"
         strokeDasharray="4 4"
         strokeWidth="1"
@@ -106,7 +106,7 @@ export default function TemperatureGraph({
         x2={width - padR}
         y1={bandBottom}
         y2={bandBottom}
-        stroke="#7FE0C3"
+        stroke="#0FB5D6"
         strokeOpacity="0.55"
         strokeDasharray="4 4"
         strokeWidth="1"
@@ -119,9 +119,9 @@ export default function TemperatureGraph({
           x={4}
           y={y(t) + 3}
           fontSize="9"
-          fill="#102332"
+          fill="#0A1B2E"
           fillOpacity="0.5"
-          fontFamily="var(--font-inter)"
+          fontFamily="var(--font-mono)"
         >
           {t}°
         </text>
@@ -146,7 +146,7 @@ export default function TemperatureGraph({
             cx={x(i)}
             cy={y(v)}
             r="2.6"
-            fill="#FF6B35"
+            fill="#F08C1E"
           />
         ) : null
       )}
@@ -158,7 +158,7 @@ export default function TemperatureGraph({
             cx={x(data.length - 1)}
             cy={y(last)}
             r="8"
-            fill={outOfRange(last) ? "#FF6B35" : lineColor}
+            fill={outOfRange(last) ? "#F08C1E" : lineColor}
             fillOpacity="0.18"
             className="animate-blip"
           />
@@ -166,7 +166,7 @@ export default function TemperatureGraph({
             cx={x(data.length - 1)}
             cy={y(last)}
             r="3.4"
-            fill={outOfRange(last) ? "#FF6B35" : lineColor}
+            fill={outOfRange(last) ? "#F08C1E" : lineColor}
           />
         </g>
       )}

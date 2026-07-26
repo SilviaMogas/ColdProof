@@ -1,10 +1,10 @@
 type Tone = "verified" | "alert" | "neutral" | "info";
 
 const styles: Record<Tone, string> = {
-  verified: "bg-mint/15 text-[#0c7a5f] ring-1 ring-inset ring-mint/40",
-  alert: "bg-alert/12 text-[#c2410c] ring-1 ring-inset ring-alert/35",
+  verified: "bg-mint/15 text-[#075E70] ring-1 ring-inset ring-mint/40",
+  alert: "bg-alert/12 text-[#7A4405] ring-1 ring-inset ring-alert/35",
   neutral: "bg-navy-900/5 text-ink/70 ring-1 ring-inset ring-navy-900/10",
-  info: "bg-cyan/12 text-[#0784a0] ring-1 ring-inset ring-cyan/35",
+  info: "bg-cyan/12 text-[#075E70] ring-1 ring-inset ring-cyan/35",
 };
 
 const dotColor: Record<Tone, string> = {

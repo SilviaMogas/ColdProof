@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-sora: "Sora", sans-serif;
+  /* Brand Book v1.0 typography */
+  --font-sora: "Space Grotesk", "Inter Tight", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 html {
@@ -13,8 +15,9 @@ html {
 }
 
 body {
-  background-color: #f7fafc;
-  color: #102332;
+  /* Paper ground, Ink text */
+  background-color: #fbfcfd;
+  color: #0a1b2e;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -23,7 +26,8 @@ body {
 @layer base {
   h1, h2, h3, h4 {
     font-family: var(--font-sora);
-    letter-spacing: -0.02em;
+    /* Display tracking −2.8% per brand book */
+    letter-spacing: -0.028em;
   }
 }
 
@@ -33,11 +37,16 @@ body {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan;
+    @apply inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-slate;
+  }
+
+  /* Data face — temperatures, timestamps, checkpoint IDs, measurements */
+  .mono {
+    @apply font-mono tabular-nums;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy-900 shadow-glow transition-all duration-200 hover:bg-[#12c6e6] hover:shadow-cardHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy-900 shadow-glow transition-all duration-200 hover:bg-cyan-soft hover:shadow-cardHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan;
   }
 
   .btn-secondary {
@@ -80,12 +89,12 @@ body {
 /* Thin scrollbar for horizontal process on mobile */
 .scroll-x {
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 184, 217, 0.4) transparent;
+  scrollbar-color: rgba(15, 181, 214, 0.4) transparent;
 }
 .scroll-x::-webkit-scrollbar {
   height: 6px;
 }
 .scroll-x::-webkit-scrollbar-thumb {
-  background: rgba(0, 184, 217, 0.4);
+  background: rgba(15, 181, 214, 0.4);
   border-radius: 9999px;
 }

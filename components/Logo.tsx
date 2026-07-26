@@ -6,10 +6,13 @@ type LogoProps = {
 };
 
 /**
- * ColdProof mark.
- * A continuous "C" (the cold chain) opening from origin to destination,
- * a verification checkpoint node where it closes, and a temperature/data
- * line threading through it. Works in monochrome and at small sizes.
+ * ColdProof mark — Brand Book v1.0.
+ * A six-arm crystal verification symbol. The inner void holds the cyan
+ * check; nothing is stacked, contained or added. Built on a 96-unit grid,
+ * one arm (radius 20→42) carrying two pairs of barbs, rotated six times by
+ * 60° for perfect radial symmetry. The check never touches an arm.
+ * The mark never carries breach amber and never changes colour to report
+ * a state — Ink, white or safe cold only.
  */
 export function LogoMark({
   className = "h-8 w-8",
@@ -18,39 +21,39 @@ export function LogoMark({
   className?: string;
   mono?: boolean;
 }) {
-  const chain = mono ? "currentColor" : "#00B8D9";
-  const check = mono ? "currentColor" : "#7FE0C3";
+  // Cyan check on colour marks; single-colour check in mono contexts.
+  const check = mono ? "currentColor" : "#0FB5D6";
+  const arm =
+    "M48 28 V6 M40.64 17.15 L48 21.4 L55.36 17.15 M42.37 9.75 L48 13 L53.63 9.75";
   return (
     <svg
       className={className}
-      viewBox="0 0 40 40"
+      viewBox="0 0 96 96"
       fill="none"
       role="img"
       aria-label="ColdProof"
     >
-      {/* Continuous C — the cold chain, origin to destination */}
-      <path
-        d="M31 11.5A13 13 0 1 0 31 28.5"
-        stroke={chain}
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      {/* Temperature / data line threading through the chain */}
-      <path
-        d="M9.5 20h4.5l2.4-5 3.2 10 2.4-5H27"
-        stroke={mono ? "currentColor" : "#DFF6FF"}
-        strokeOpacity={mono ? 0.55 : 0.9}
-        strokeWidth="1.8"
+      {/* Six-arm crystal — arms + barbs in the current text colour */}
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="5.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      {/* Verification checkpoint node at the destination */}
-      <circle cx="31" cy="20" r="5.4" fill={check} />
+      >
+        <path d={arm} />
+        <path transform="rotate(60 48 48)" d={arm} />
+        <path transform="rotate(120 48 48)" d={arm} />
+        <path transform="rotate(180 48 48)" d={arm} />
+        <path transform="rotate(240 48 48)" d={arm} />
+        <path transform="rotate(300 48 48)" d={arm} />
+      </g>
+      {/* Verification check, held inside the inner void */}
       <path
-        d="M28.7 20.1l1.7 1.7 3-3.4"
-        stroke={mono ? "#000" : "#071A2B"}
-        strokeOpacity={mono ? 0.9 : 1}
-        strokeWidth="1.8"
+        d="M39.7 47.8 L44.8 53.8 L56.3 42.3"
+        fill="none"
+        stroke={check}
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -67,8 +70,9 @@ export default function Logo({
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <LogoMark className="h-8 w-8" mono={mono} />
       {showWordmark && (
-        <span className="font-sora text-lg font-700 font-bold tracking-tight">
-          Cold<span className={mono ? "" : "text-cyan"}>Proof</span>
+        <span className="font-sora text-lg tracking-tight">
+          <span className="font-normal">Cold</span>
+          <span className="font-bold">Proof</span>
         </span>
       )}
     </span>
