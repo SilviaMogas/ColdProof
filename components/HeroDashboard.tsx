@@ -43,11 +43,11 @@ export default function HeroDashboard() {
         {/* Top bar */}
         <div className="flex items-center justify-between border-b border-white/8 px-5 py-3.5">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan/15 font-sora text-xs font-bold text-cyan">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan/15 font-mono text-xs font-bold text-cyan">
               CP
             </span>
             <div>
-              <p className="font-sora text-sm font-semibold text-white">
+              <p className="font-mono text-sm font-medium text-white">
                 Batch CP-2048
               </p>
               <p className="text-[11px] text-ice/50">Insulin · 2 pallets</p>
@@ -74,13 +74,13 @@ export default function HeroDashboard() {
               </p>
               <div className="mt-1 flex items-baseline gap-2">
                 <span
-                  className={`font-sora text-4xl font-bold tabular-nums transition-colors duration-500 ${
-                    isSafe ? "text-mint" : "text-alert"
+                  className={`font-mono text-4xl font-bold tabular-nums transition-colors duration-500 ${
+                    isSafe ? "text-cyan" : "text-alert"
                   }`}
                 >
                   {currentTemp.toFixed(1)}
                 </span>
-                <span className="font-sora text-lg text-ice/70">°C</span>
+                <span className="font-mono text-lg text-ice/70">°C</span>
               </div>
               <p className="mt-1 text-[11px] text-ice/50">
                 Safe range&nbsp;·&nbsp;2°C – 8°C
@@ -127,7 +127,7 @@ export default function HeroDashboard() {
                   axisMin={0}
                   axisMax={12}
                   height={150}
-                  lineColor={isSafe ? "#7FE0C3" : "#FF6B35"}
+                  lineColor={isSafe ? "#0FB5D6" : "#F08C1E"}
                   ariaLabel="Live temperature readings for batch CP-2048"
                 />
               </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
+// Display face — Brand Book v1.0
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "700"],
   variable: "--font-sora",
   display: "swap",
 });
@@ -13,6 +14,14 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+// Data face — temperatures, timestamps, checkpoint IDs, measurements
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -42,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         {/* No-JS fallback: never leave scroll-reveal content permanently hidden */}
         <noscript>

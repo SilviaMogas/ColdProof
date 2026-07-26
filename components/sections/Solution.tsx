@@ -83,8 +83,8 @@ export default function Solution() {
               <span
                 className={`flex h-12 w-12 items-center justify-center rounded-xl ${
                   p.accent === "mint"
-                    ? "bg-mint/15 text-[#0c7a5f]"
-                    : "bg-cyan/12 text-[#0784a0]"
+                    ? "bg-mint/15 text-[#075E70]"
+                    : "bg-cyan/12 text-[#075E70]"
                 }`}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ function Arrow() {
     <svg width="28" height="10" viewBox="0 0 28 10" aria-hidden>
       <path
         d="M0 5h24m0 0l-4-4m4 4l-4 4"
-        stroke="#00B8D9"
+        stroke="#0FB5D6"
         strokeWidth="1.4"
         fill="none"
         strokeLinecap="round"

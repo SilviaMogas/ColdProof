@@ -29,7 +29,7 @@ export default function ContactForm() {
           <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden>
             <path
               d="M5 13l4 4 10-11"
-              stroke="#0c7a5f"
+              stroke="#075E70"
               strokeWidth="2"
               fill="none"
               strokeLinecap="round"
