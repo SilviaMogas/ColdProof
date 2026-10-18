@@ -26,9 +26,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cold-proof.vercel.app"),
   title: "ColdProof — Proof of safe delivery",
   description:
-    "ColdProof gives pharmaceutical companies, logistics operators and healthcare organisations a verifiable record of every condition and handover across the cold chain.",
+    "ColdProof is a cold-chain assurance proof of concept exploring verifiable temperature and custody records. Functionality, integrations and commercial availability are under development.",
   keywords: [
     "cold chain assurance",
     "temperature monitoring",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ColdProof — Proof of safe delivery",
     description:
-      "A verifiable record of whether a temperature-sensitive shipment remained within its required conditions.",
+      "A cold-chain assurance proof of concept exploring verifiable temperature and custody records. Product functionality and integrations are under development.",
     type: "website",
   },
 };
